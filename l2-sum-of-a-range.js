@@ -6,11 +6,18 @@
 
 /*Invul naam*/
 
-function range(start, end) {
+function range(start, end, step = 1) {
     var arrayList = [];
-    for (var i = start; i <= end; i++) {
-        arrayList.push(i);
+    if (step > 0) {
+        for (var i = start; i <= end; i + step) {
+            arrayList.push(i);
+        }
+    } else if (step < 0) {
+        for (var i = start; i >= end; i + step) {
+            arrayList.push(i);
+        }
     }
+
     return arrayList;
 }
 
